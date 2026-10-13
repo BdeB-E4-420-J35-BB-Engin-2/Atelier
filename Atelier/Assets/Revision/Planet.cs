@@ -4,6 +4,12 @@ namespace Revision
 {
     public class Planet : MonoBehaviour
     {
+        [SerializeField] private GameObject _centerOfRotation;
+        
+        [SerializeField] private Color _color = Color.red;
+        [SerializeField] private float _size = 1f;
+        [SerializeField] private float _speed = 1f;
+        
         private void Start()
         {
             Debug.Log("Planet started");
@@ -12,7 +18,7 @@ namespace Revision
         private void Update()
         {
             // Version
-            transform.RotateAround(Vector3.zero, Vector3.up, 1f);
+            transform.RotateAround(_centerOfRotation.transform.position, Vector3.up, _speed);
             
             // Version 2
             // var valZ = Mathf.Sin(Time.time * 2);
@@ -28,8 +34,8 @@ namespace Revision
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(transform.position, 1f);
+            Gizmos.color = _color;
+            Gizmos.DrawSphere(transform.position, _size);
         }
     }
 }
