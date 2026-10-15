@@ -1,12 +1,16 @@
+using System;
 using UnityEngine;
 
 namespace Revision
 {
+    [Serializable]
     public class Planet : MonoBehaviour
     {
         [SerializeField] private GameObject _centerOfRotation;
         
-        [SerializeField] private Color _color = Color.red;
+        // Property comme une variable
+        public Color Color {  get;  set; }
+        
         [SerializeField] private float _size = 1f;
         [SerializeField] private float _speed = 1f;
         
@@ -34,7 +38,7 @@ namespace Revision
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = _color;
+            Gizmos.color = Color;
             Gizmos.DrawSphere(transform.position, _size);
         }
     }
