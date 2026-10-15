@@ -9,16 +9,18 @@ namespace Revision
         public GameObject CenterOfRotation { get; set; }
 
         // Property comme une variable
-        public Color Color { get; set; }
-
-        public float Size { get; set; }
-        public float Speed { get; set; }
-        public float Distance { get; set; }
-        
+        public Color Color { get; private set; }
+        public float Size { get; private set; }
+        public float Speed { get; private set; }
+        public float Distance { get; private set; }
 
         private void Start()
         {
             Debug.Log("Planet started");
+            Speed = UnityEngine.Random.Range(0.1f, 1f);
+            Size = UnityEngine.Random.Range(0.5f, 2f);
+            Distance = UnityEngine.Random.Range(5f, 20f);
+            Color = Color.HSVToRGB(UnityEngine.Random.value, 1f, 1f);
             
             transform.position = CenterOfRotation.transform.position + Vector3.forward * Distance;
         }
