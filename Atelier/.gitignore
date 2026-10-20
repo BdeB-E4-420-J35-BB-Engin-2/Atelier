@@ -159,3 +159,7 @@ x86/
 
 # Publish Web Output
 *.[Pp]ublish.xml
+
+# Keep package manifests tracked
+!**/[Pp]ackages/manifest.json
+!**/[Pp]ackages/packages-lock.json
