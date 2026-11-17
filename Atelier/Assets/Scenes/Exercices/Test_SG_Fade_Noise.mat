@@ -38,12 +38,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NoiseScale: 500
+    - _NoiseScale: 50
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Speed: 0.1
     m_Colors:
-    - _Tint: {r: 0.16794233, g: 0.6155678, b: 0.9622642, a: 1}
+    - _Tint: {r: 1, g: 0.071783766, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2944923284211095960
